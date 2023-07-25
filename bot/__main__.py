@@ -4,7 +4,7 @@ from aiogram import Bot, Dispatcher
 from bot.handlers import router
 import asyncio
 
-from config import BOT_TOKEN
+from bot.config import BOT_TOKEN
 
 logging.basicConfig(level=logging.INFO)
 
