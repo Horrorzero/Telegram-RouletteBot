@@ -19,4 +19,14 @@ class Game(StatesGroup):
 
 @router.message(F.text=='Грати')
 async def play(message: Message, state: FSMContext):
-    await message.answer('hello')
+    await state.set_state(Game.mode)
+    lines = [
+        'Оберіть режим:',
+        '1.Обрати колір і число',
+        '2.Обрати тільки колір',
+        '3.Обрати тільки число',
+        '4.Обрати два кольори і два числа',
+    ]
+    await message.answer(
+        text='\n'.join(lines),
+    )
